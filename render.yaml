@@ -4,7 +4,7 @@ services:
   healthCheckPath: /minio/health/live
   runtime: image
   image:
-    url: docker.io/minio/minio:RELEASE.2023-08-04T17-40-21Z.hotfix.04968f7ec
+    url: docker.io/minio/minio:2024.4.28
   dockerCommand: minio server /data
   autoDeploy: false
   disk:
@@ -13,8 +13,10 @@ services:
   envVars:
   - key: MINIO_ROOT_USER
     generateValue: true
+    value: sobeeadmin
   - key: MINIO_ROOT_PASSWORD
     generateValue: true
+    value: sobeeadmin123
   - key: MINIO_BROWSER
     value: "off"
 - type: web
