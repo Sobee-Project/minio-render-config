@@ -1,22 +1,37 @@
 services:
 - type: web
-  name: minio-server
-  # healthCheckPath: /minio/health/live
-  runtime: image
-  image:
+ name: minio-server
+ runtime: image
+ image:
     url: docker.io/minio/minio:2024.4.28
-  dockerCommand: minio server /data
-  autoDeploy: false
-  disk:
-    name: data
-    mountPath: /data
-  envVars:
-  - key: MINIO_ROOT_USER
+ dockerCommand: minio server /data
+ autoDeploy: false
+ envVars:
+ - key: MINIO_ROOT_USER
     value: "sobeeadmin"
-  - key: MINIO_ROOT_PASSWORD
+ - key: MINIO_ROOT_PASSWORD
     value: "sobeeadmin123"
-  - key: MINIO_BROWSER
+ - key: MINIO_BROWSER
     value: "off"
+# services:
+# - type: web
+#   name: minio-server
+#   # healthCheckPath: /minio/health/live
+#   runtime: image
+#   image:
+#     url: docker.io/minio/minio:2024.4.28
+#   dockerCommand: minio server /data
+#   autoDeploy: false
+#   disk:
+#     name: data
+#     mountPath: /data
+#   envVars:
+#   - key: MINIO_ROOT_USER
+#     value: "sobeeadmin"
+#   - key: MINIO_ROOT_PASSWORD
+#     value: "sobeeadmin123"
+#   - key: MINIO_BROWSER
+#     value: "off"
 # - type: web
 #   name: minio-console
 #   runtime: image
