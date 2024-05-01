@@ -12,11 +12,9 @@ services:
     mountPath: /data
   envVars:
   - key: MINIO_ROOT_USER
-    generateValue: true
-    value: sobeeadmin
+    value: "sobeeadmin"
   - key: MINIO_ROOT_PASSWORD
-    generateValue: true
-    value: sobeeadmin123
+    value: "sobeeadmin123"
   - key: MINIO_BROWSER
     value: "off"
 - type: web
