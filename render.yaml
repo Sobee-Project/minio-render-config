@@ -1,7 +1,7 @@
 services:
 - type: web
   name: minio-server
-  healthCheckPath: /minio/health/live
+  # healthCheckPath: /minio/health/live
   runtime: image
   image:
     url: docker.io/minio/minio:2024.4.28
